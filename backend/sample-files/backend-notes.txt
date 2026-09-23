@@ -1,0 +1,3 @@
+StreamSphere Backend Notes
+
+Express, MongoDB, authentication and download auditing notes.
