@@ -4,7 +4,7 @@ import axios from "axios";
 import "./styles.css";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
+  baseURL: "https://task2-task3-for-elevance-skills-3.onrender.com/api"
 });
 const setToken = t => { if (t) { localStorage.setItem("ss3-token", t); API.defaults.headers.common.Authorization = `Bearer ${t}`; } else { localStorage.removeItem("ss3-token"); delete API.defaults.headers.common.Authorization; } };
 const saved = localStorage.getItem("ss3-token"); if (saved) setToken(saved);
