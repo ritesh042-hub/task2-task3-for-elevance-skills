@@ -3,7 +3,9 @@ import { createRoot } from "react-dom/client";
 import axios from "axios";
 import "./styles.css";
 
-const API = axios.create({ baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api" });
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_URL
+});
 const setToken = t => { if (t) { localStorage.setItem("ss3-token", t); API.defaults.headers.common.Authorization = `Bearer ${t}`; } else { localStorage.removeItem("ss3-token"); delete API.defaults.headers.common.Authorization; } };
 const saved = localStorage.getItem("ss3-token"); if (saved) setToken(saved);
 
